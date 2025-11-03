@@ -100,50 +100,47 @@ a{color:var(--neon)}
     color: rgba(255, 255, 255, 0.6);
 }
 
-.stats-section {
-    background: var(--bg);
-    color: white;
-    padding: 80px 0;
-    margin: 100px 0;
-}
-
-.stat-item {
-    text-align: center;
-    margin-bottom: 30px;
-    color: white;
-}
-
-.stat-number {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.stat-label {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
-
-.hero-section {
-    padding: 150px 0;
-    background: linear-gradient(180deg, var(--primary-blue), var(--neon));
-    text-align: center;
-}
-
-.quote-section {
-    padding: 80px 0;
-    background-color: darkblue ;
-    text-align: center;
-}
-
-.quote {
-    font-size: 1.8rem;
-    font-style: italic;
-    color: white ;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
+       .results-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x1080/1a1a1a/ffffff?text=Fond+Résultats');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+        }
+        .result-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .result-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #4CAF50;
+        }
+        .result-label {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .ai-message {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            font-style: italic;
+            border-left: 3px solid #4CAF50;
+        }
+        .percentage {
+            color: #FFC107;
+        }
 .author {
     margin-top: 20px;
     font-weight: 600;
@@ -151,6 +148,7 @@ a{color:var(--neon)}
     }
 @media(min-width:992px){.hero h1{font-size:3.6rem}}
 @media(max-width:768px){.hero h1{font-size:2rem}}
+
 
 
 
