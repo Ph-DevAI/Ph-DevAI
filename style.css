@@ -102,7 +102,7 @@ a{color:var(--neon)}
 
 .stats-section {
     background: var(--bg);
-    color: var(--primary-blue);
+    color: white;
     padding: 80px 0;
     margin: 100px 0;
 }
@@ -110,6 +110,7 @@ a{color:var(--neon)}
 .stat-item {
     text-align: center;
     margin-bottom: 30px;
+    color: white;
 }
 
 .stat-number {
@@ -150,6 +151,7 @@ a{color:var(--neon)}
     }
 @media(min-width:992px){.hero h1{font-size:3.6rem}}
 @media(max-width:768px){.hero h1{font-size:2rem}}
+
 
 
 
