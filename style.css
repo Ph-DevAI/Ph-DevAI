@@ -100,6 +100,54 @@ a{color:var(--neon)}
     color: rgba(255, 255, 255, 0.6);
 }
 
+.stats-section {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    padding: 80px 0;
+    margin: 100px 0;
+}
 
+.stat-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.hero-section {
+    padding: 150px 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.quote-section {
+    padding: 80px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.quote {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.author {
+    margin-top: 20px;
+    font-weight: 600;
+    color: #6a11cb;
+    }
 @media(min-width:992px){.hero h1{font-size:3.6rem}}
 @media(max-width:768px){.hero h1{font-size:2rem}}
+
