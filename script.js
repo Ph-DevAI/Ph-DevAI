@@ -67,3 +67,74 @@ applyTexts();document.getElementById('lang-fr').addEventListener('click',()=>{la
 
 // Set year
 document.getElementById('year').textContent=new Date().getFullYear();
+// Gestion du compteur de visiteurs
+function updateVisitorCount() {
+    let count = localStorage.getItem('visitorCount');
+    if (!count) {
+        count = 0;
+    }
+    count = parseInt(count) + 1;
+    localStorage.setItem('visitorCount', count);
+    return count;
+}
+
+// Animation des compteurs au scroll
+function animateCounter(element, target) {
+    let current = 0;
+    const increment = target / 100;
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            if (element.id === 'visitor-count') {
+                element.textContent = target + '+';
+            } else if (element.hasAttribute('data-target')) {
+                element.textContent = target + '%';
+            } else {
+                element.textContent = target;
+            }
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 20);
+}
+
+// Vérification si un élément est dans la vue
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Initialisation
+document.addEventListener('DOMContentLoaded', function() {
+    // Mise à jour du compteur de visiteurs
+    const visitorCount = updateVisitorCount();
+    document.getElementById('visitor-count').textContent = visitorCount;
+    
+    // Animation des compteurs au scroll
+    let countersAnimated = false;
+    
+    window.addEventListener('scroll', function() {
+        const statsSection = document.getElementById('stats');
+        
+        if (statsSection && isInViewport(statsSection) && !countersAnimated) {
+            countersAnimated = true;
+            
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                let target;
+                if (stat.id === 'visitor-count') {
+                    target = visitorCount;
+                } else {
+                    target = parseInt(stat.getAttribute('data-target'));
+                }
+                animateCounter(stat, target);
+            });
+        }
+    });
+});
